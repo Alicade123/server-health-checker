@@ -150,10 +150,11 @@ def send_email_alert(failed_services):
 
     try:
 
-        sender = "your_email@gmail.com"
-        password = "your_app_password"
+        sender = "abiturijee@gmail.com"
+        password = "aiyh jwie ovbr uvjz"
 
-        receiver = "admin@example.com"
+
+        receiver = "abiturije1alicade@gmail.com"
 
         message = EmailMessage()
 
