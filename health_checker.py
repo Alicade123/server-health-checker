@@ -8,10 +8,8 @@ from email.message import EmailMessage
 from concurrent.futures import ThreadPoolExecutor
 
 
-# =====================================
-# Feature 1 & 9
-# Load servers from ENV or config file
-# =====================================
+# Feature 1 & 9 => Load servers from ENV or config file
+
 def load_servers():
 
     # First check environment variable
@@ -38,10 +36,9 @@ def load_servers():
     )
 
 
-# =====================================
-# Feature 2,3,4,5,6,12
-# Check one server
-# =====================================
+
+# Feature 2,3,4,5,6,12 => Check one server
+
 def check_server(url, retries=2):
 
     for attempt in range(retries + 1):
@@ -109,10 +106,9 @@ def check_server(url, retries=2):
             }
 
 
-# =====================================
-# Feature 7
-# Format output
-# =====================================
+
+# Feature 7 => Format output
+
 def format_result(result):
 
     url = result["url"]
@@ -139,10 +135,8 @@ def format_result(result):
     return output
 
 
-# =====================================
-# Feature 13
-# Send email alert
-# =====================================
+# Feature 13 => Send email alert
+
 def send_email_alert(failed_services):
 
     if not failed_services:
@@ -181,10 +175,8 @@ def send_email_alert(failed_services):
         print("\nCould not send email:", error)
 
 
-# =====================================
-# Feature 10 & 11
-# Check all servers in parallel
-# =====================================
+# Feature 10 & 11 => Check all servers in parallel
+
 def check_all_servers():
 
     servers = load_servers()
@@ -211,9 +203,9 @@ def check_all_servers():
     return failed_services
 
 
-# =====================================
+
 # Main Program
-# =====================================
+
 def main():
 
     failed_services = check_all_servers()
